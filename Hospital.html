@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azollo Hospital</title>
+</head>
+<style>
+    body, html{
+        height: 100%;
+        margin: 0;
+    }
+    .bg{
+        background-image: url(assets/background.png);
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 90%;
+    }
+    .nav{
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        margin-top: 10px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .button{
+        grid-column: 4;
+    }
+    main{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 100vw;
+        height: 100%;
+        justify-content: space-around;
+        align-items: start;
+    }
+    .main1{
+        margin-left: 15vw;
+        margin-top: 15vw;
+        color: white;
+    }
+    .nav ul li:hover{
+        color: #538bae;
+        cursor: pointer;
+    }
+    .main2{
+        height: 30vw;
+        width: 20vw;
+        background-color: white;
+    }
+    .but2{
+        margin-top: 70px;
+        height: 50px;
+    }
+    input[type=text], select {
+        width: 87%;
+        background-color: #e7e1e1;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ece5e5;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    input[type=submit] {
+    width: 87%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px 20px;
+    }
+    input[type=submit]:hover{
+        background-color: #45a049;
+    }
+    .main2 label{
+        margin-left: 20px;
+    }
+    .pg2{
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+    }
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card{
+        height: 20vw;
+        width: 17vw;
+        border: 1px solid rgb(139, 171, 203);
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 25px;
+    }
+    .card div h4{
+        color: white;
+    }
+    .card img{
+        height: 50px;
+        width: 50px;
+        margin: 20px;
+    }
+    .pg3{
+        background-color: #f8f3f3;
+        width: 100%;
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+    }
+    .head{
+        text-align: center;
+        font-family: sans-serif;
+        padding: 20px;
+    }
+    .revcards{
+        display: flex;
+        justify-content: center;
+    }
+    .rcard{
+        border: 1px solid gray;
+        margin: 10px;
+        background-color: white;
+        border-radius: 6px;
+        margin-bottom: 10vw;
+    }
+    .paras{
+        margin: 2px 15px;
+        line-height: 4px;
+    }
+    .star{
+        height: 20px;
+        width: auto;
+        margin: 3px;
+    }
+    .grid2{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: space-around;
+        margin-left: 90px;
+        margin-top: 70px;
+        margin-bottom: 60px;
+    }
+    .griditem{
+        margin: 20px;
+    }
+    .pg5{
+        background-color: #f8f3f3;
+    }
+    *{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .boxsys{
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+        padding-bottom: 100px;
+        -ms-flex-align: stretch;
+    }
+    .box{
+        border: 2px solid rgb(65, 196, 216);
+        border-radius: 6px;
+        background-color: #fff;
+    }
+    .images{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center;
+        grid-template-rows: repeat(2,1fr);
+        align-items: center;
+        grid-template-areas: 
+            'zero dollar dollar'
+            'zero par par';
+            margin: 20px 2px;
+    }
+    .tick ul{
+        list-style: none;
+        margin: 10px 25px 10px 16px;
+        font-weight: 600;
+        color: rgba(99, 97, 97, 0.874);
+        line-height: 40px;
+    }
+    .tick ul li img{
+        height: 20px;
+        margin-right: 10px;
+    }
+    .box2{
+        background-color: rgb(23, 22, 22);
+        color: #fff;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        padding: 50px;
+    }
+    .pg6{
+        background-color: #0a3149;
+        margin: 0px;
+    }
+    .text{
+        padding-left: 100px;
+    }
+    .form{
+        padding: 10px;
+        border-radius: 5px;
+        margin-right: 100px;
+    }
+    .form input{
+        font-size: 16px;
+        color: rgb(78, 74, 74);
+        padding: 15px 11px;
+        background-color: #fff;
+        border: none;
+        outline: none;
+    }
+    .form button{
+        font-size: 16px;
+        color: white;
+        padding: 15px 11px;
+        background-color: rgb(43, 146, 162);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .form button:hover{
+        background-color: #387eaa;
+    }
+    .layout{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: space-evenly ;
+        justify-items: center;
+        align-items: start;
+        margin: 60px;
+        padding-bottom: 50px;
+    }
+    .gi h4{
+        font-size: 1.5vw;
+        color: rgb(37, 36, 36);
+    }
+    .gi p{
+        color: rgb(113, 110, 110);
+        font-weight: 600;
+        line-height: 34px;
+    }
+    button:hover{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="bg">
+        <nav class="nav">
+            <div><h5 style="margin-left: 50px;font-size: large;">Azollo Group of Hospitals</h5></div>
+            <div>
+                <ul style="display: flex;justify-content: space-around;list-style-type: none;">
+                    <li>Home</li>
+                    <li>Product</li>
+                    <li>Pricing</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="button">
+            <button style="background-color: #538bae;color: white;height: 40px; width: 120px;border: 2px #387eaa solid; border-radius: 10%;">Get Quote Now</button>
+            </div>
+        </nav>
+        <main>
+            <div class="main1">
+                <div style="line-height: 0.7;"><h1 style="font-family: sans-serif; font-weight: bolder;font-size: 3vw;">Meet The Best</h1>
+                <h1 style="font-family: sans-serif; font-weight: bolder;line-height: 0.7;font-size: 3vw;">Hospital</h1></div>
+                <div style="line-height: 0.5;margin-top: 50px;font-size: large;"><p>We know how large objects will act,</p>
+                <p>but things on a small scale.</p></div>
+                <div class="but2">
+                    <button style="background-color: #538bae;color: white;height: 40px; width: 120px;border: 2px #387eaa solid; border-radius: 25px;">Get Quote Now</button>
+                    <button style="background: transparent;color: white;height: 40px; width: 120px;border: 2px #ecf1f4 solid; border-radius: 25px;">Learn More</button>
+                </div>
+            </div>
+            <div class="main2" style="justify-self: center;margin-top: 6vw;">
+                <h3 style="text-align: center; font-weight: bold;">Book Appointment</h3>
+                <form action="" method="get">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Full Name">
+                    <label for="email">Email address</label>
+                    <input type="text" name="email" id="email" placeholder="example@gmail.com">
+                    <label for="dept">Department</label>
+                    <select name="dept" id="dept">
+                        <option value="Australia">Australia</option>
+                        <option value="Bangkok">Bangkok</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="France">France</option>
+                        <option value="India">India</option>
+                    </select>
+                    <label for="time">Time</label>
+                    <select name="time" id="time">
+                        <option value="1">9 AM</option>
+                        <option value="2">2 PM</option>
+                        <option value="3">5 PM</option>
+                        <option value="4">8 PM</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </main>
+
+    </div>
+    
+</body>
+<body>
+    <div class="pg2">
+        <div style="text-align: center;"><h2 style="font-weight: bolder;font-family: sans-serif;font-size: 3vw;">Leading Medicine</h2>
+        <p>Lorem ipsum dolor sit amet consectetur </p>
+        <p style="margin-bottom: 5vw;">elit. Cupiditate omnis mollitia reiciendis ullam.</p></div>
+        <div class="cards">
+            <div class="card">
+                <div style="background-color: hsl(203, 45%, 61%);border-top: 1px #538bae solid;display: flex;flex-direction: row;align-items: center;justify-content: space-around;border-top-left-radius: 25px;border-top-right-radius: 25px;">
+                    <img src="bed-icon.png" alt="">
+                    <h4 style="margin-right: 40px;">Emergency Care</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                    <span style="color: #387eaa;margin-left: 25px;">Learn More</span>
+                </div>
+            </div>
+            <div class="card">
+                <div style="background-color: hsl(203, 45%, 61%);display: flex;flex-direction: row;align-items: center;justify-content: space-around;border-top: 1px #538bae solid;border-top-left-radius: 25px;border-top-right-radius: 25px;">
+                    <img src="ambulance-icon.png" alt="">
+                    <h4 style="margin-right: 40px;">Cancer Care</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                    <span style="color: #387eaa;margin-left: 25px;">Learn More</span>
+                </div>
+            </div>
+            <div class="card">
+                <div style="background-color: hsl(203, 45%, 61%);display: flex;flex-direction: row;align-items: center;justify-content: space-around;border-top: 1px #538bae solid;border-top-left-radius: 25px;border-top-right-radius: 25px;">
+                    <img src="doctor-call-hospital-icon.png" alt="">
+                    <h4 style="margin-right: 40px">Health Queries</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                    <span style="color: #387eaa;margin-left: 25px;">Learn More</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pg3">
+        <div class="head">
+            <h2 style="font-weight: bold;font-size: 2vw;margin-top: 100px;">Reviews</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        </div>
+        <div class="revcards">
+            <div class="rcard">
+                <img style="margin-left: 15px;margin-top: 15px;" class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <img class="star" src="rating.png" alt="">
+                <div class="paras">
+                    <p>Lorem ipsum dolor sit, amet  </p>
+                    <p>consectetur adipisicing elit. Adipisci</p>
+                    <p>impedit dicta debitis accusamus?</p>
+                </div>
+                <img style="height: 30px;width: auto;" src="assets/#user.1.png" alt="">
+            </div>
+            <div class="rcard">
+                <img style="margin-left: 15px;margin-top: 15px;" class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <img class="star" src="rating.png" alt="">
+                <div class="paras"><p>Lorem ipsum dolor sit, amet  </p>
+                <p>consectetur adipisicing elit. Adipisci</p>
+                <p>impedit dicta debitis accusamus?</p></div>
+                <img src="assets/#user.2.png" alt="">
+            </div>
+            <div class="rcard">
+                <img style="margin-left: 15px;margin-top: 15px;" class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <img class="star" src="star.png" alt="">
+                <div class="paras"><p>Lorem ipsum dolor sit, amet  </p>
+                <p>consectetur adipisicing elit. Adipisci</p>
+                <p>impedit dicta debitis accusamus?</p></div>
+                <img src="assets/#user.3.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="pg4">
+        <div style="text-align: center;">
+            <h1 style="font-weight: bolder;">FAQ</h1>
+            <div>
+                <p>Here are some frequently asked</p>
+                <p>questions regarding our hospital and website</p>
+            </div>
+        </div>
+         <div class="grid2">
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+                <div class="griditem">
+                    <div style="line-height: 4px;"><img style="display: inline;height: 20px;width: auto;" src="icons8-right-arrow-100.png" alt=""><h4 style="font-weight: bold;display: inline;font-size: large;">The quick fox jumps over the </h4>
+                    <h4 style="font-weight: bold;font-size: large; margin-left: 25px;">lazy dog</h4>
+                    <p style="margin-left: 25px;">Things on a very small scale</p>
+                    <p style="margin-left: 25px;">behave like nothing.</p></div>
+                </div>
+        </div>
+        
+    </div>
+    <div class="pg5">
+        <div>
+            <h1 style="text-align: center; padding-top: 8vw;">Pricing</h1>
+            <div style="text-align: center;line-height: 5px;">
+                <p>Our pricing is the best among all</p>
+                <p>You can go through the prices mentioned below</p>
+            </div>
+            <div class="boxsys">
+                <div style="margin-top: 50px;" class="box">
+                    <h2 style="text-align: center;margin-top: 40px;">FREE</h2>
+                    <div style="margin: 40px 50px;line-height: 3px;text-align: center;font-weight: bold;color: rgba(128, 128, 128, 0.874);"><p >Organise across all</p>
+                    <p>apps by hand</p></div>
+                    <div class="images">
+                        <div style="grid-area: zero;justify-self: end;"><img style="height: 30px;" src="icons8-zero-16.png" alt=""></div>
+                        <div style="grid-area: dollar;"><img style="height: 10px;" src="icons8-dollar-24.png" alt=""></div>
+                        <span style="color: rgb(65, 196, 216);grid-area: par;">Per Month</span>
+                    </div>
+                    <div class="tick">
+                        <ul>
+                            <li style="align-items: center;"><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">10GB Cloud storage</li>
+                            <li><img src="pngwing.com.png" alt="">Email and community support</li>
+                        </ul>
+                    </div>
+                    <button style="background-color:rgb(65, 196, 216);color: white;margin: 40px 50px 40px 50px;width:70%;padding: 10px 50px;border:1px solid rgb(65, 196, 216);border-radius: 4px;">Try for free
+                    </button>
+                </div>
+                <div class="box box2">
+                    <h2 style="text-align: center;margin-top: 50px;">STANDARD</h2>
+                    <div style="margin: 40px 50px;line-height: 3px;text-align: center;font-weight: bold;color: #fffafa;"><p >Organise across all</p>
+                    <p>apps by hand</p></div>
+                    <div class="images">
+                        <div style="grid-area: zero;justify-self: end;"><img style="height: 30px;" src="icons8-9-16.png" alt=""></div>
+                        <div style="grid-area: dollar;"><img style="height: 10px;" src="icons8-dollar-24.png" alt=""></div>
+                        <span style="color: rgb(65, 196, 216);grid-area: par;">Per Month</span>
+                    </div>
+                    <div class="tick">
+                        <ul style="color: #fffafa;">
+                            <li style="align-items: center;"><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">10GB Cloud storage</li>
+                            <li><img src="pngwing.com.png" alt="">Email and community support</li>
+                        </ul>
+                    </div>
+                    <button style="background-color:rgb(65, 196, 216);color: white;margin: 40px 50px 50px 50px;width:70%;padding: 10px 50px;border:1px solid rgb(65, 196, 216);border-radius: 4px;">Try for free
+                    </button>
+                </div>
+                <div style="margin-top: 50px;" class="box">
+                    <h2 style="text-align: center;margin-top: 40px;">PREMIUM</h2>
+                    <div style="margin: 40px 50px;line-height: 3px;text-align: center;font-weight: bold;color: rgba(128, 128, 128, 0.874);"><p >Organise across all</p>
+                    <p>apps by hand</p></div>
+                    <div class="images">
+                        <div style="grid-area: zero;justify-self: end;"><img style="height: 30px;" src="icons8-9-16.png" alt=""></div>
+                        <div style="grid-area: dollar;"><img style="height: 10px;" src="icons8-dollar-24.png" alt=""></div>
+                        <span style="color: rgb(65, 196, 216);grid-area: par;">Per Month</span>
+                    </div>
+                    <div class="tick">
+                        <ul>
+                            <li style="align-items: center;"><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">Unlimited product updates</li>
+                            <li><img src="pngwing.com.png" alt="">10GB Cloud storage</li>
+                            <li><img src="pngwing.com.png" alt="">Email and community support</li>
+                        </ul>
+                    </div>
+                    <button style="background-color:rgb(65, 196, 216);color: white;margin: 40px 50px 40px 50px;width:70%;padding: 10px 50px;border:1px solid rgb(65, 196, 216);border-radius: 4px;">Try for free
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pg6">
+        <div class="container">
+            <div class="text">
+                <h2 style="font-weight: 600;font-size: 2vw;font-family: monospace;">Get In Touch</h2>
+                <div style="line-height: 10px;">
+                    <p>Feel free to connect with us anytime. You can also give</p>
+                    <p>us a missed call. We are there for our clients 24*7</p>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <form action="">
+                    <div class="form">
+                        <input type="email" name="email" id="mail" placeholder="Your Email">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="pg7">
+        <div class="layout">
+            <div class="gi">
+                <h4>Get in Touch</h4>
+                <p>the quick fox jumps over <br>the lazy dog</br></p>
+                <div>
+                    <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                </div>
+            </div>
+            <div class="gi">
+                <h4>Company Info</h4>
+                <p>About Us <br>Carrier<br>We are hiring<br>Blog</p>
+            </div>
+            <div class="gi">
+                <h4>Features</h4>
+                <p>Business Marketing<br>User Analytics<br>Live Chat<br>Unlimited Support</p>
+            </div>
+            <div class="gi">
+                <h4>Resources</h4>
+                <p>IOS & Android<br>Watch a Demo<br>Customers<br>API</p>
+            </div>
+        </div>
+        <div style="text-align: center;margin-bottom: 10px;color: rgb(113, 110, 110);">Made With Love By Figmaland. @All Rights Reserved</div>
+    </div>
+</body>
+</html>
